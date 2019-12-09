@@ -33,7 +33,7 @@ implementation "com.github.wenkency:pay:1.4.0"
 ### 使用方式
 
 ```
-        // 1. 配置APP在微信上申请的一些信息
+        // 1. 在Application里面配置一下APP在微信上申请的一些信息
         WXConstants.API_KEY = "";
         WXConstants.APP_ID = "";
 
