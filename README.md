@@ -11,7 +11,7 @@ allprojects {
 		}
 	}
 
-implementation "com.github.wenkency:pay:1.4.0"
+implementation "com.github.wenkency:pay:1.1.0"
 
 
 ```
