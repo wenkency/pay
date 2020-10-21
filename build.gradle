@@ -4,7 +4,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.0'
@@ -16,10 +16,14 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
         google()
         jcenter()
-        
+        mavenCentral()
+        // 支付宝 SDK AAR 包所需的配置
+        flatDir {
+            dirs 'libs'
+        }
+        maven { url 'https://jitpack.io' }
     }
 }
 
