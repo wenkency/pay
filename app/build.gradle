@@ -18,7 +18,8 @@ android {
     }
 }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation  (name:'alipaySdk-15.7.9-20200727142814-noUtdid', ext:'aar')
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation project(path: ':lib-pay')

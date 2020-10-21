@@ -21,7 +21,7 @@ allprojects {
         mavenCentral()
         maven { url 'https://jitpack.io' }
         flatDir {
-            dirs '../lib-pay/libs'
+            dirs 'libs'
         }
     }
 }

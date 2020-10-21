@@ -8,10 +8,14 @@ allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
+			flatDir {
+                 dirs 'libs'
+            }
 		}
-	}
+}
 
-implementation "com.github.wenkency:pay:1.5.0"
+implementation (name:'alipaySdk-15.7.9-20200727142814-noUtdid', ext:'aar')
+implementation "com.github.wenkency:pay:1.6.0"
 
 
 ```
