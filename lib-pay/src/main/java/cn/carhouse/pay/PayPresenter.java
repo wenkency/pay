@@ -15,6 +15,7 @@ import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 
 import cn.carhouse.pay.utils.Base64;
+import cn.carhouse.pay.utils.HandlerUtils;
 import cn.carhouse.pay.utils.WXConstants;
 import cn.carhouse.pay.utils.WXSignUtils;
 
@@ -30,7 +31,7 @@ import cn.carhouse.pay.utils.WXSignUtils;
  * ================================================================
  */
 public class PayPresenter implements IWXAPIEventHandler {
-    private static Handler mHandler = new Handler(Looper.getMainLooper());
+
     private Activity mActivity;
     private OnPayListener mPayListener;
     private PayReq mPayReq;
@@ -74,7 +75,7 @@ public class PayPresenter implements IWXAPIEventHandler {
         PayResult payResult = new PayResult(result);
         // 支付宝返回此次支付结果及加签，建议对支付宝签名信息拿签约时支付宝提供的公钥做验签
         final String status = payResult.getResultStatus();
-        mHandler.post(new Runnable() {
+        HandlerUtils.getHandler().post(new Runnable() {
             @Override
             public void run() {
                 doAliPayResult(status);

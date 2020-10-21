@@ -5,12 +5,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.wenkency'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
@@ -29,9 +29,10 @@ repositories {
     }
 }
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    api files('libs/libammsdk.jar')
-    /*支付宝支付*/
-    implementation(name: 'alipaySdk-15.6.5-20190718211159-noUtdid', ext: 'aar')
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    compileOnly('androidx.appcompat:appcompat:1.2.0')
+    // 支付宝支付
+    // implementation(name: 'alipaySdk-15.7.5-20200422171636-noUtdid', ext: 'aar')
+    // 微信支付
+    // implementation files('libs/libammsdk.jar')
 }

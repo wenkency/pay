@@ -1,2 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.carhouse.pay" />
+    package="cn.carhouse.pay" >
+    <application>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- alipay sdk end -->
+    </application>
+</manifest>
