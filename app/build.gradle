@@ -17,9 +17,15 @@ android {
         }
     }
 }
+
+// 根节点下添加 repositories 节点
+repositories {
+    flatDir {
+        dirs 'libs', project(':lib-pay').file('libs')
+    }
+}
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
-    implementation  (name:'alipaySdk-15.7.9-20200727142814-noUtdid', ext:'aar')
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation project(path: ':lib-pay')
