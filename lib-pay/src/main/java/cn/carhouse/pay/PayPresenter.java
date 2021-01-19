@@ -2,8 +2,6 @@ package cn.carhouse.pay;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Handler;
-import android.os.Looper;
 import android.text.TextUtils;
 
 import com.alipay.sdk.app.PayTask;
@@ -67,7 +65,11 @@ public class PayPresenter implements IWXAPIEventHandler {
     }
 
     private void doAliPay(String paymentInfo) {
-        String payInfo = new String(Base64.decode(paymentInfo));
+        String payInfo = paymentInfo;
+        // 后台返回的信息有没有Base64编码
+        if (WXConstants.isBase64) {
+            payInfo = new String(Base64.decode(paymentInfo));
+        }
         // 构造PayTask 对象
         PayTask payTask = new PayTask(mActivity);
         // 调用支付接口，获取支付结果
