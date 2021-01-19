@@ -18,7 +18,7 @@ android {
     }
 }
 
-// 根节点下添加 repositories 节点
+// 添加依赖 lib-pay下的libs目录
 repositories {
     flatDir {
         dirs 'libs', project(':lib-pay').file('libs')

@@ -1,23 +1,21 @@
 # PaySample
 1. 微信、支付宝支付封装库。
 
-### 引入
+### 下载代码，添加Module。可以更新支付宝支付和微信支付的SDK
 
+###### app目录下的build.gradle配置
 ```
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-			flatDir {
-                 dirs 'libs'
-            }
-		}
+// 添加依赖 lib-pay下的libs目录
+repositories {
+    flatDir {
+        dirs 'libs', project(':lib-pay').file('libs')
+    }
 }
-
-implementation (name:'alipaySdk-15.7.9-20200727142814-noUtdid', ext:'aar')
-implementation "com.github.wenkency:pay:1.6.0"
-
-
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation project(path: ':lib-pay')
+    ...
+}
 ```
 ### 清单配置
 ```
