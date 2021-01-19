@@ -1,12 +1,12 @@
 package cn.carhouse.pay.utils;
 
 /**
- * 微信支付配置
+ * 支付配置
  * 自己在工程Application配置一下这个类
  */
 public class WXConstants {
     /**
-     * 微信支付信息后台有没有Base64
+     * 支付信息后台有没有Base64编码
      * 默认是没有
      */
     public static boolean isBase64;

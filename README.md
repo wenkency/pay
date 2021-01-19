@@ -1,9 +1,9 @@
 # PaySample
 1. 微信、支付宝支付封装库。
 
-### 下载代码，添加Module。可以更新支付宝支付和微信支付的SDK
+### 1.下载代码，添加lib-pay依赖库。自己可以更新支付宝支付和微信支付到最新的SDK
 
-###### app目录下的build.gradle配置
+### 2.app目录下的build.gradle配置。具体可以参考Demo
 ```
 // 添加依赖 lib-pay下的libs目录
 repositories {
@@ -17,7 +17,7 @@ dependencies {
     ...
 }
 ```
-### 清单配置
+### 3.清单配置
 ```
         <activity
            android:name="支付的Activity"
@@ -32,7 +32,7 @@ dependencies {
 
 ```
 
-### 使用方式
+### 4.使用方式
 
 ```
         // 1. 在Application里面配置一下APP在微信上申请的一些信息
